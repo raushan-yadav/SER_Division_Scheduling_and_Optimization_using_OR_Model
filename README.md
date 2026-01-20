@@ -42,13 +42,16 @@ This project bridges that gap by developing a **freight-oriented, operationally 
 
 ---
 
-### Objective Function
-Minimize **priority-weighted total delay**:
-\[
-\min \sum_{t \in T} P_t \cdot Delay_t
-\]
+## Objective Function
 
-This ensures that **freight trains receive higher precedence** during conflicts.
+The objective is to minimize the **priority-weighted total delay** of all trains.
+minimize Σ (priority_t × Delay_t) for all trains t
+
+where:
+- `Delay_t` is the end-to-end delay of train *t* with respect to the Working Time Table (WTT)
+- `priority_t` is higher for freight trains and lower for passenger trains
+
+This formulation ensures that **freight trains receive higher precedence during conflicts**, reflecting their economic importance in mineral-dense corridors.
 
 ---
 
