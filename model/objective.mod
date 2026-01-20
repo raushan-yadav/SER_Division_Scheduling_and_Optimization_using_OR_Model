@@ -1,2 +1,3 @@
-minimize Total_Weighted_Delay:
- sum{t in T} P[t] * Delay[t];
+minimize Total_Delay:
+  sum {t in Tf} wf * Delay[t]
++ sum {t in Tp} wp * Delay[t];
