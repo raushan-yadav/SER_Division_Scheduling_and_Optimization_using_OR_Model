@@ -10,3 +10,7 @@ param S{T} >= 0;          # Scheduled arrival time (WTT)
 
 param wf > 0;             # Weight for freight delay
 param wp > 0;             # Weight for passenger delay
+param capA{A} >= 1;     # capacity of track section
+param P{T} >= 0;        # priority index of train
+param M := 10000;       # big-M
+
