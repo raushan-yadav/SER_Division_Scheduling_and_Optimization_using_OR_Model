@@ -71,6 +71,16 @@ a representative freight-dominated corridor is modeled as a pilot
 network. Section running times, dwell times, and headways are
 directly aligned with WTT specifications.
 
+⚠️ Note on Data Redevelopment
+
+The initial illustrative dataset was replaced with a
+Working Time Table (WTT)-based dataset to ensure
+operational realism. The current data represents a
+selected freight-dominated corridor within the
+Chakradharpur Division and is consistent with the
+redeveloped optimization model.
+
+
 ## Pilot Corridor Selection
 
 To ensure clarity and tractability during the initial coding and validation phase,
