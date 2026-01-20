@@ -1,35 +1,106 @@
-# Freight-Oriented Train Scheduling Optimization (SER – Chakradharpur Division)
+# Freight-Oriented Train Scheduling Optimization  
+### Chakradharpur Division, South Eastern Railway (SER)
 
 ## Overview
-This project focuses on the development of a freight-prioritized train scheduling optimization model for the Chakradharpur Division of South Eastern Railway (SER). The division is characterized by high-density freight operations, primarily mineral and bulk commodity traffic, where operational delays have a direct impact on revenue realization.
+This project develops a **freight-prioritized train scheduling optimization model** for the Chakradharpur Division of South Eastern Railway (SER).  
+The model is formulated as a **Mixed Integer Linear Program (MILP)** and is grounded explicitly in **Working Time Table (WTT)** data, making it suitable for division-level operational analysis.
 
-The objective of this work is to formulate a mathematically rigorous optimization model that minimizes freight train delays while ensuring safe and feasible operation for all trains.
+Unlike conventional passenger-centric timetabling models, this work emphasizes **freight movement reliability**, which is critical for mineral and bulk freight corridors in Indian Railways.
 
-## Scope of Current Phase
-The current phase is limited to:
-- Network abstraction based on SER Working Time Table (WTT)
-- Mathematical model formulation
-- Objective function and constraint design
-- Validation of modeling assumptions
+---
 
-Computational implementation and solver-based experimentation will be taken up in subsequent phases.
+## Motivation
+Freight trains in high-density corridors often experience cascading delays due to:
+- single-line sections,
+- junction conflicts,
+- heterogeneous train priorities, and
+- limited overtaking opportunities.
 
-## Methodology
-- Operations Research based modeling (MILP)
-- Time-based train scheduling formulation
-- Explicit representation of single-line and double-line sections
-- Freight-prioritized delay minimization
+Most academic models address passenger networks or abstract railway graphs.  
+This project bridges that gap by developing a **freight-oriented, operationally realistic model** aligned with Indian railway practices.
 
-## Case Study
-- Railway Division: Chakradharpur Division
-- Zone: South Eastern Railway (SER)
-- Data Source: SER Working Time Table (WTT)
+---
+
+## Model Description
+
+### Sets
+- `T` : Set of all trains  
+- `Tf ⊂ T` : Freight trains  
+- `Tp ⊂ T` : Passenger trains  
+- `N` : Nodes (stations / junctions)  
+- `J ⊂ N` : Junction nodes  
+- `A` : Track sections (arcs)  
+- `As ⊂ A` : Single-line sections  
+
+---
+
+### Decision Variables
+- `a(t,n)` : Arrival time of train *t* at node *n*  
+- `d(t,n)` : Departure time of train *t* from node *n*  
+- `Delay(t)` : Total delay of train *t* w.r.t. WTT  
+- `x(t1,t2,a)` : Binary sequencing variable for conflicts on single-line sections  
+
+---
+
+### Objective Function
+Minimize **priority-weighted total delay**:
+\[
+\min \sum_{t \in T} P_t \cdot Delay_t
+\]
+
+This ensures that **freight trains receive higher precedence** during conflicts.
+
+---
+
+### Key Constraints
+- Time continuity and minimum dwell times  
+- Section running time constraints  
+- Single-line conflict resolution using binary sequencing  
+- Junction headway constraints  
+- Explicit freight-priority constraints over passenger trains  
+
+---
+
+## Data Source
+All parameters are derived from:
+- **Working Time Table (WTT)** of Chakradharpur Division  
+- Sectional running times  
+- Minimum dwell times  
+- Junction headways  
+
+---
 
 ## Repository Structure
-model/ → Mathematical formulation (AMPL style)
-data/ → Input data extracted from WTT
-docs/ → Model documentation and reports
+├── model/
+│ ├── sets.mod
+│ ├── parameters.mod
+│ ├── variables.mod
+│ ├── objective.mod
+│ ├── constraints.mod
+│ └── main.mod
+│
+├── data/
+│ └── chakradharpur.dat
+│
+├── docs/
+│ ├── literature_review.md
+│ └── model_formulation.md
+│
+└── README.md
 
 
-## Status
-Model formulation under development.
+---
+
+## Contributions
+This work demonstrates how **freight-prioritized scheduling** can be modeled at a division level using real railway data, providing a foundation for future extensions such as:
+- disruption handling,
+- yard capacity modeling, and
+- energy-efficient scheduling.
+
+---
+
+## Author
+**Raushan Yadav**  
+Research Intern,
+Indian Institute of Technology Kharagpur,
+Kharagpur - 721302, West Bengal, India
