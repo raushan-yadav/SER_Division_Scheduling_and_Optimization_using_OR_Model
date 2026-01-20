@@ -1,8 +1,8 @@
-# Freight-Oriented Train Scheduling Optimization  
+# SER_Division_Scheduling-and-Optimization-using-OR-Model
 ### Chakradharpur Division, South Eastern Railway (SER)
 
 ## Overview
-This project develops a **freight-prioritized train scheduling optimization model** for the Chakradharpur Division of South Eastern Railway (SER).  
+This project develops a **SER_Division_Scheduling-and-Optimization-using-OR-Model** for the Chakradharpur Division of South Eastern Railway (SER).  
 The model is formulated as a **Mixed Integer Linear Program (MILP)** and is grounded explicitly in **Working Time Table (WTT)** data, making it suitable for division-level operational analysis.
 
 Unlike conventional passenger-centric timetabling models, this work emphasizes **freight movement reliability**, which is critical for mineral and bulk freight corridors in Indian Railways.
