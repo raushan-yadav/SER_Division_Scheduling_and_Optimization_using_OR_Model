@@ -71,21 +71,21 @@ All parameters are derived from:
 ---
 
 ## Repository Structure
-├── model/
-│ ├── sets.mod
-│ ├── parameters.mod
-│ ├── variables.mod
-│ ├── objective.mod
-│ ├── constraints.mod
-│ └── main.mod
-│
-├── data/
-│ └── chakradharpur.dat
-│
-├── docs/
-│ ├── literature_review.md
-│ └── model_formulation.md
-│
+model/
+ ├─ sets.mod
+ ├─ parameters.mod
+ ├─ variables.mod
+ ├─ objective.mod
+ ├─ constraints.mod
+ └─ main.mod
+
+data/
+ └─ chakradharpur.dat
+
+docs/
+ ├─ literature_review.md
+ └─ model_formulation.md
+
 └── README.md
 
 
