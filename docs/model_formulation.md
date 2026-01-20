@@ -76,6 +76,6 @@ The model incorporates constraints related to:
 ---
 
 ### 9. Scope and Future Work
-The current work focuses exclusively on mathematical model formulation and
-structural validation. Computational implementation and solver-based
-experimentation will be undertaken in subsequent phases after model approval.
+This work focuses on model formulation and structural validation.
+Computational experiments and large-scale calibration using the
+complete Chakradharpur Division WTT are planned as future work.
